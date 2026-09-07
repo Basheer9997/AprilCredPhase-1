@@ -1,0 +1,15 @@
+subscription_id               = "eaf2e968-4555-48df-9079-4c70fab577c5"
+location                      = "canadacentral"
+vnet_address_space            = "10.0.0.0/16"
+aks_subnet_prefix             = "10.0.1.0/24"
+postgres_subnet_prefix        = "10.0.2.0/24"
+aks_node_count                = 2
+min_node_count                = 2
+max_node_count                = 2
+vm_size                       = "Standard_DS2_v2"
+postgres_version              = "17"
+postrgres_admin_username      = "credpayadmin"
+database_name                 = "credpay"
+log_retention_days            = 30
+key_vault_name                = "capstonekeyvt" # name must be matched with the az key vault name in portal
+key_vault_resource_group_name = "keyvault-rg"   # rg name must be matched with the rg name in portal
