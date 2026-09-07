@@ -22,17 +22,27 @@ stages:
           - task: TerraformInstaller@1
             inputs:
               terraformVersion: 'latest'
-          
-          - task: TerraformTask@5
+
+          - task: AzureCLI@3
             inputs:
-              provider: 'azurerm'
-              command: 'init'
+              connectionType: 'azureRM'
+              azureSubscription: 'devops-manual'
+              scriptType: 'batch'
+              scriptLocation: 'inlineScript'
               workingDirectory: terraform
-              backendServiceArm: 'devops-manual'
-              backendAzureRmResourceGroupName: 'sa_bkp-rg'
-              backendAzureRmStorageAccountName: 'satfbkp'
-              backendAzureRmContainerName: 'statefiles'
-              backendAzureRmKey: 'credpay.terraform.tfstate'
+              inlineScript: | 
+                terraform init
+          
+          # - task: TerraformTask@5
+          #   inputs:
+          #     provider: 'azurerm'
+          #     command: 'init'
+          #     workingDirectory: terraform
+          #     backendServiceArm: 'devops-manual'
+          #     backendAzureRmResourceGroupName: 'sa_bkp-rg'
+          #     backendAzureRmStorageAccountName: 'satfbkp'
+          #     backendAzureRmContainerName: 'statefiles'
+          #     backendAzureRmKey: 'credpay.terraform.tfstate'
 
   # - stage: builddockerimages
   #   displayName: building docker images
