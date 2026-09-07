@@ -29,7 +29,6 @@ stages:
               command: 'init'
               workingDirectory: terraform
               backendServiceArm: 'devops-manual'
-              backendAzureRmOverrideSubscriptionID: 'eaf2e968-4555-48df-9079-4c70fab577c5'
               backendAzureRmResourceGroupName: 'sa_bkp-rg'
               backendAzureRmStorageAccountName: 'satfbkp'
               backendAzureRmContainerName: 'statefiles'
