@@ -27,7 +27,7 @@ stages:
             inputs:
               connectionType: 'azureRM'
               azureSubscription: 'devops-manual'
-              scriptType: 'batch'
+              scriptType: 'bash'
               scriptLocation: 'inlineScript'
               workingDirectory: terraform
               inlineScript: | 
