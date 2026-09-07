@@ -32,6 +32,7 @@ stages:
               workingDirectory: terraform
               inlineScript: | 
                 terraform init
+                terraform plan
           
           # - task: TerraformTask@5
           #   inputs:
