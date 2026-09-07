@@ -32,7 +32,8 @@ stages:
               workingDirectory: terraform
               inlineScript: | 
                 terraform init
-                terraform plan
+                # terraform plan
+                terraform apply -auto-approve
           
           # - task: TerraformTask@5
           #   inputs:
